@@ -2,14 +2,19 @@ import * as dotenv from "dotenv"
 import {Client, Message} from "discord.js"
 import logger from "./logger";
 import commands from "./commands";
+import * as mongoose from "mongoose";
 
 dotenv.config()
 
 const {
     TOKEN,
-    PREFIX
+    PREFIX,
+    MONGO_URI
 } = process.env
 
+mongoose.connect(MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
+    logger.info("Connected to Database")
+})
 const client = new Client()
 
 client.on("ready", () => {
