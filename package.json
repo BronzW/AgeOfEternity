@@ -3,7 +3,7 @@
   "scripts": {
     "start": "node .",
     "build": "npx tsc",
-    "dev": "nodemon --ext 'ts' --exec 'npx tsc && node .'"
+    "dev": "nodemon --ext 'ts' --exec \"npx tsc && node .\""
   },
   "dependencies": {
     "@types/mongoose": "5.10.3",
